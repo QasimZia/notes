@@ -1,0 +1,13 @@
+<div class='main-content'>
+{% for item in posts %}
+<!--{% load staticfiles %}
+    <script src='{% static "note/js/note.js" %}'></script>-->
+        <fieldset>
+            <legend><a class='deleteLink' href='{% url "note:delete" id=item.id %}' noteid={{item.id}}>Delete</a></legend>
+            <div class='note'>
+                <data class='note_id' type='hidden' value='{{item.id}}'></data>
+                <p class='note_content'>{{item.content}}</p>
+            </div>
+        </fieldset>
+{% endfor %}
+</div>
